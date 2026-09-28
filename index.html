@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17324D">
+  <meta name="description" content="Prototipo académico de Instituto Alera. Todo tu entorno académico, en un solo lugar.">
+  <title>Instituto Alera · Plataforma académica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="welcome" class="welcome-layout">
+    <section class="welcome-story" aria-label="Presentación de Instituto Alera">
+      <div class="welcome-story-inner">
+        <div class="eyebrow eyebrow-light"><span class="small-diamond" aria-hidden="true"></span> INSTITUTO ALERA · CAMPUS DIGITAL</div>
+        <div class="story-content">
+          <div class="story-line" aria-hidden="true"></div>
+          <p class="story-kicker">UNA NUEVA FORMA DE ESTAR CONECTADOS</p>
+          <h1>Forjando mentes,<br><em>creando destinos.</em></h1>
+          <p class="story-description">Un espacio para organizar tus clases, descubrir lo que sigue y avanzar a tu ritmo.</p>
+          <div class="story-foot"><span>CONOCIMIENTO</span><span class="story-foot-line"></span><span>COMUNIDAD</span><span class="story-foot-line"></span><span>FUTURO</span></div>
+        </div>
+        <div class="story-watermark" aria-hidden="true">A</div>
+      </div>
+    </section>
+
+    <main class="welcome-entry">
+      <div class="entry-inner">
+        <img src="assets/logo-alera.png" class="brand-logo" width="360" height="120" alt="Instituto Alera" />
+        <div class="entry-body">
+          <span class="eyebrow"><span class="small-diamond" aria-hidden="true"></span> PLATAFORMA ACADÉMICA</span>
+          <h2>Tu espacio<br><em>comienza aquí.</em></h2>
+          <p>Materias, actividades y avisos. Todo tu entorno académico, en un solo lugar.</p>
+          <div class="entry-panel">
+            <div class="panel-heading"><span class="panel-icon" aria-hidden="true">↗</span><div><strong>Explorar Alera</strong><small>Vista de demostración para estudiantes</small></div></div>
+            <button id="enter-demo" class="button button-primary" type="button">Entrar al prototipo <span aria-hidden="true">↗</span></button>
+            <p class="demo-disclaimer">Acceso de demostración · No requiere contraseña</p>
+          </div>
+        </div>
+        <div class="entry-footer"><span>© INSTITUTO ALERA</span><span>PROTOTIPO IHC / 01</span></div>
+      </div>
+    </main>
+  </div>
+
+  <div id="app-shell" class="app-shell hidden">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="side-top">
+        <img src="assets/logo-alera.png" width="196" height="65" alt="Instituto Alera" class="sidebar-logo" />
+        <div class="sidebar-tag">CAMPUS DIGITAL <span>·</span> ESTUDIANTE</div>
+      </div>
+      <div class="side-divider"></div>
+      <nav class="side-nav" aria-label="Secciones">
+        <button class="nav-item active" type="button" data-view="inicio"><span class="nav-icon" aria-hidden="true">⌂</span><span>Inicio</span><span class="nav-arrow" aria-hidden="true">↗</span></button>
+        <button class="nav-item" type="button" data-view="materias"><span class="nav-icon" aria-hidden="true">▦</span><span>Mis materias</span><span class="nav-arrow" aria-hidden="true">↗</span></button>
+        <button class="nav-item" type="button" data-view="actividades"><span class="nav-icon" aria-hidden="true">☑</span><span>Actividades</span><span class="nav-arrow" aria-hidden="true">↗</span></button>
+        <button class="nav-item" type="button" data-view="perfil"><span class="nav-icon" aria-hidden="true">◯</span><span>Mi perfil</span><span class="nav-arrow" aria-hidden="true">↗</span></button>
+      </nav>
+      <div class="side-bottom">
+        <div class="side-note"><span class="side-note-mark" aria-hidden="true">✦</span><span>El futuro comienza con una buena idea.</span></div>
+        <button class="exit-button" id="exit-demo" type="button">Salir de la demostración <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left"><span class="topbar-mark" aria-hidden="true">A</span><span>INSTITUTO ALERA</span><span class="topbar-slash">/</span><span id="header-section">Inicio</span></div>
+        <div class="topbar-right"><span class="topbar-demo">● DEMOSTRACIÓN</span><div class="avatar" aria-label="Perfil de estudiante">EA</div></div>
+      </header>
+      <main class="content" id="content" tabindex="-1" aria-live="polite"></main>
+      <footer class="workspace-footer"><span>INSTITUTO ALERA</span><span>Forjando mentes, creando destinos.</span></footer>
+    </div>
+    <nav class="bottom-nav" aria-label="Navegación móvil">
+      <button class="mobile-link active" data-view="inicio" type="button"><span aria-hidden="true">⌂</span>Inicio</button>
+      <button class="mobile-link" data-view="materias" type="button"><span aria-hidden="true">▦</span>Materias</button>
+      <button class="mobile-link" data-view="actividades" type="button"><span aria-hidden="true">☑</span>Tareas</button>
+      <button class="mobile-link" data-view="perfil" type="button"><span aria-hidden="true">◯</span>Perfil</button>
+    </nav>
+  </div>
+
+  <dialog id="task-modal" class="task-modal" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" id="close-modal" aria-label="Cerrar detalle">×</button>
+    <div id="modal-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
