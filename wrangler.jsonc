@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "instituto-alera",
+  "main": "./src/worker.js",
+  "compatibility_date": "2026-09-28",
+
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "alera-db",
+      "database_id": "621b042c-4de8-410a-8d17-a593c72ec5b6"
+    }
+  ]
+}
